@@ -35,6 +35,7 @@ cmake -G "Visual Studio 10" -DCMAKE_BUILD_TYPE=Release
 cmake -G "Xcode" -DCMAKE_BUILD_TYPE=Release
 
 make -j
+
 ```
 
 ### Flatbuffer Definition Files
@@ -43,6 +44,9 @@ Flatbuffers definition files (`.fbs` suffix, see `monster.fbs` for an example) a
 ```
 # Go back to mp3-flatbuffers directory
 cd ..
+
+# install the requirements
+pip install -r requirements.txt
 
 # Compile the example flatbuffer defition file
 flatbuffers/flatc --python monster.fbs
@@ -114,7 +118,7 @@ This means you will have to do this task without a dedicated API via some old-fa
 ```
 for i in range(a, b):
   try:
-    print(a, int.from_bytes(buf[a:a+8], 'little'))
+    print(i, int.from_bytes(buf[i:i+8], 'little'))
   except:
     pass
 ```
